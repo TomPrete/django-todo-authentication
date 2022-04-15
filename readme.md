@@ -1,4 +1,4 @@
-# Todo List
+# Todo List (with Authentication)
 
 In this challenge we're going to create a basic CRUD app with just a single record type so that you can focus on practicing the basic actions for CRUD.
 
@@ -18,7 +18,7 @@ This challenge is empty for you to practice building something from scratch. The
 
 ## Release 0: Getting Ready
 
-Start by creating a new virtual environment and then activate it. 
+Start by creating a new virtual environment and then activate it.
 
 `python -m venv venv source venv/bin/activate`
 `source venv/bin/activate`
@@ -30,32 +30,32 @@ Create your project, app, models and get started! Let's say a `Todo` item has a 
 ## Release 1: Create
 Since we need a way to get records into our system, we'll start with the routes to create new records.
 
-If the user makes a GET request to `/todos/new` they should: 
+If the user makes a GET request to `/todos/new` they should:
   * See a form with the required form fields to create a `Todo` objet
 
 Submitting the form makes a POST request to `/todos`:
-  * It should create the new Todo record in the database. 
+  * It should create the new Todo record in the database.
   * After the new Todo is created, the user should be redirected to view that Todo.
 
 ## Release 2: Read
 Next we need to be able to read Todo records. Let's start with the `show` action - here are the requirements:
 
 A GET request to `/todos/<id>` (where id will be a number corresponding to id of the record you want to view) will:
-  * Show the title and description of the Todo 
+  * Show the title and description of the Todo
   * Show a link to edit the existing Todo
-  
-A GET request to `/todos` should: 
+
+A GET request to `/todos` should:
   * Show a list of all Todos that exist
   * Show links to each Todo individually
   * Show a link to create a new Todo
- 
+
 ## Release 3: Update
 
 Now that we can list records, let's build the functionality to manipulate those records.
 A GET to `/todos/<id>/edit`:
-  * Displays a form with the current title and description already filled out in each form field 
-  
-Submitting the form: 
+  * Displays a form with the current title and description already filled out in each form field
+
+Submitting the form:
   * Updates the existing Todo with the new provided values
   * Redirects you back to the show page
 

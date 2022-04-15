@@ -1,0 +1,26 @@
+<h1>All Tasks for {{ user }}</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Is Completed?</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in all_tasks %}
+      <tr>
+        <td><p><a href="{% url 'todo:task_detail' task.id %}">{{ task.name }}</a></p></td>
+        {% if task.is_complete %}
+          <td>Complete</td>
+        {% else %}
+          <td>Not Completed</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <hr>
+  <p><a href="{% url 'todo:new_task' %}">New</a></p>
+
+  <div><a href="{% url 'accounts:logout_user' %}">Logout</a></div>

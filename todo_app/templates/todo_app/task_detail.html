@@ -1,0 +1,15 @@
+<h1>Task '{{ task.name }}'</h1>
+<p>Is the Task Complete?</p>
+{% if task.is_complete %}
+  <p>Yes, the task is completed</p>
+{% else %}
+  <p>No, the task is Not complete</p>
+{% endif %}
+<div>
+  <a href="{% url 'todo:edit_task' task_id=task.id %}">Edit</a>
+</div>
+<div>
+  <a href="{% url 'todo:delete_task' task_id=task.id %}">Delete</a>
+</div>
+<hr>
+<p><a href="{% url 'todo:task_list' %}">All Tasks</a></p>
